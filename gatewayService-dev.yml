@@ -10,16 +10,15 @@ eureka:
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
     preferIpAddress: true
 spring:
-
   application:
     name: gatewayService
   cloud:
     gateway:
       mvc:
         routes[0]:
-          id: inventoryservice
-          predicates[0]: Path=/inventoryservice/api/v1/brands/**
-          uri: lb://INVENTORY-SERVICE
+          id: customerservice
+          predicates[0]: Path=/customerservice/api/v1/customers/**
+          uri: lb://CUSTOMER-SERVICE
         routes[1]:
           id: discoveryserver
           predicates[0]: Path=/eureka/web

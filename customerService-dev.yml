@@ -11,11 +11,11 @@ server:
   port: 0
 spring:
   application:
-    name: inventory-service
+    name: customer-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/rentacarinventorydb
+    url: jdbc:postgresql://localhost:5432/turkcellcrmcustomerdb
     username: postgres
-    password: postgres
+    password: 12345
   jpa:
     hibernate:
       ddl-auto: update
