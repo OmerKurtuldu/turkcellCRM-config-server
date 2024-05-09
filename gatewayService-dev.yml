@@ -11,16 +11,28 @@ eureka:
     preferIpAddress: true
 spring:
   application:
-    name: gatewayService
+    name: gateway-service
   cloud:
     gateway:
       mvc:
         routes[0]:
           id: customerservice
-          predicates[0]: Path=/customerservice/api/v1/customers/**
+          predicates[0]: Path=/customerservice/api/v1/**
           uri: lb://CUSTOMER-SERVICE
         routes[1]:
           id: discoveryserver
           predicates[0]: Path=/eureka/web
           filters[0]: SetPath=/
           uri: http://localhost:9000
+        routes[2]:
+          id: accountservice
+          predicates[0]: Path=/accountservice/api/v1/**
+          uri: lb://ACCOUNT-SERVICE
+        routes[3]:
+          id: identityservice
+          predicates[0]: Path=/identityservice/api/v1/**
+          uri: lb://IDENTITY-SERVICE
+        routes[4]:
+          id: searchservice
+          predicates[0]: Path=/searchservice/api/v1/searchs/**
+          uri: lb://SEARCH-SERVICE
