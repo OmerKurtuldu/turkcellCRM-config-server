@@ -11,9 +11,9 @@ server:
   port: 9005
 spring:
   application:
-    name: category-service
+    name: catalog-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/turkcellcrmcategorydb
+    url: jdbc:postgresql://localhost:5432/turkcellcrmcatalogdb
     username: postgres
     password: 12345
   jpa:
