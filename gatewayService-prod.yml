@@ -5,7 +5,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://ldiscoveryserver:8761/eureka
+      defaultZone: http://discoveryserver:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
     preferIpAddress: true
