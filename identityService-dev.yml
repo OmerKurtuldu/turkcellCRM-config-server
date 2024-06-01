@@ -13,7 +13,7 @@ spring:
   application:
     name: identity-service
   datasource:
-    url: jdbc:postgresql://identitydbprod:5432/turkcellcrmidentitydb
+    url: jdbc:postgresql://identitydbprod:5432/identitydbprod
     username: postgres
     password: 12345
   jpa:
