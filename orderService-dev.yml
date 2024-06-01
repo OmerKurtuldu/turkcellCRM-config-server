@@ -13,7 +13,7 @@ spring:
   application:
     name: order-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/turkcellcrmorderdb
+    url: jdbc:postgresql://host.docker.internal:5437/orderdev
     username: postgres
     password: 12345
   jpa:
