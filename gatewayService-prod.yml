@@ -1,0 +1,38 @@
+server:
+  port: 9002
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://discoveryserver:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${instanceId:${random.value}}
+    preferIpAddress: true
+spring:
+  application:
+    name: gatewayService
+  cloud:
+    gateway:
+      mvc:
+        routes[0]:
+          id: customerservice
+          predicates[0]: Path=/customerservice/api/v1/**
+          uri: lb://CUSTOMER-SERVICE
+        routes[1]:
+          id: discoveryserver
+          predicates[0]: Path=/eureka/web
+          filters[0]: SetPath=/
+          uri: http://discoveryserver:9000
+        routes[2]:
+          id: accountservice
+          predicates[0]: Path=/accountservice/api/v1/**
+          uri: lb://ACCOUNT-SERVICE
+        routes[3]:
+          id: identityservice
+          predicates[0]: Path=/identityservice/api/v1/**
+          uri: lb://IDENTITY-SERVICE
+        routes[4]:
+          id: searchservice
+          predicates[0]: Path=/searchservice/api/v1/searchs/**
+          uri: lb://SEARCH-SERVICE
