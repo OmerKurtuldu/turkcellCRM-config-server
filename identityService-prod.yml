@@ -11,7 +11,7 @@ server:
   port: 8763
 spring:
   application:
-    name: identityservice
+    name: identity-service
   datasource:
     url: jdbc:postgresql://identitydbprod:5432/identitydbprod
     username: postgres
