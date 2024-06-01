@@ -13,7 +13,7 @@ spring:
   application:
     name: identity-service
   datasource:
-    url: jdbc:postgresql://localhost:5433/identity-db
+    url: jdbc:postgresql://host.docker.internal:5433/identitydev
     username: postgres
     password: 12345
   jpa:
