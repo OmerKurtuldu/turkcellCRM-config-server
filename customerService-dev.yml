@@ -13,7 +13,7 @@ spring:
   application:
     name: customer-service
   datasource:
-    url: jdbc:postgresql://localhost:5434/customer-db
+    url: jdbc:postgresql://host.docker.internal:5434/customerdev
     username: postgres
     password: 12345
   jpa:
@@ -29,6 +29,6 @@ spring:
     show-sql: true
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: host.docker.internal:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
