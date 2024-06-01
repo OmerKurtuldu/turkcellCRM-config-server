@@ -15,7 +15,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/turkcellcrmidentitydb
     username: postgres
-    password: postgres
+    password: 12345
   jpa:
     hibernate:
       ddl-auto: update
